@@ -13,7 +13,20 @@ Actualmente, no existe un servicio que permita verificar si un número completo 
 
 **Versión numeración geográfica (ENACOM)**: 22 de octubre de 2024.
 
+## Versión del script
 
+```javascript
+(new TelefonoArgentino).version;
+// '2.0.0'
+```
+
+ó
+
+```javascript
+const tel = new TelefonoArgentino("+5491150176006");
+tel.version
+// '2.0.0'
+```
 
 ## Instalación
 
