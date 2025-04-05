@@ -13,11 +13,14 @@ Actualmente, no existe un servicio que permita verificar si un número completo 
 
 **Versión numeración geográfica (ENACOM)**: 13 de marzo de 2025.
 
-## Obtener versión
+## Versión actual
+2.0.2
+
+### Obtener versión
 
 ```javascript
 (new TelefonoArgentino).version;
-// '2.0.1'
+// '2.0.2'
 ```
 
 ó
@@ -25,7 +28,7 @@ Actualmente, no existe un servicio que permita verificar si un número completo 
 ```javascript
 const tel = new TelefonoArgentino("+5491150176006");
 tel.version;
-// '2.0.1'
+// '2.0.2'
 ```
 
 ## Instalación
