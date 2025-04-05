@@ -17,7 +17,7 @@ def get_ranges(data):
     return ranges
 
 
-with open('./enacom__numeracion-geografica__2024-12.json', 'r') as f:
+with open('./enacom__data.json', 'r') as f:
     data = json.loads( f.read() )    
     
     # Obtengo los números de area
