@@ -11,21 +11,21 @@ La validación, para números no específicos, se basa en comparar el código de
 Actualmente, no existe un servicio que permita verificar si un número completo (código de área, bloque y número asignado), pertenece efectivamente a un abonado en servicio. Por lo tanto, este _script_ asume esa posibilidad, quedando su interpretación y uso a criterio del usuario.
 
 
-**Versión numeración geográfica (ENACOM)**: 22 de octubre de 2024.
+**Versión numeración geográfica (ENACOM)**: 13 de marzo de 2025.
 
-## Versión del script
+## Obtener versión
 
 ```javascript
 (new TelefonoArgentino).version;
-// '2.0.0'
+// '2.0.1'
 ```
 
 ó
 
 ```javascript
 const tel = new TelefonoArgentino("+5491150176006");
-tel.version
-// '2.0.0'
+tel.version;
+// '2.0.1'
 ```
 
 ## Instalación
