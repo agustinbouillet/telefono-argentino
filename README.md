@@ -171,7 +171,7 @@ El formato por defecto contempla todos los formatos y tipos de teléfono que val
 
 El formato solo acepta las claves de retorno del _script_; ejemplo: `area_code`, `country`, etc. Para _parsear_ la clave con el valor se debe encerrar la clave entre _doble llave_, así: {{ `clave` }}.
 
-Las claves pueden ir separadsas o concatenadas por una coma, de este modo: `{{ area_code,number }}`.
+Las claves pueden ir separadas o concatenadas por una coma, de este modo: `{{ area_code,number }}`.
 
 Para agregar un elemento antes o después del valor, se puede incorporar un solo parámetro con el elemento a agregar, antes o después (before, after en inglés); del siguiente modo: 
 
