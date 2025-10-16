@@ -4,7 +4,7 @@
 
 # Validador de números de teléfono argentinos
 
-Este _script_ valida números de teléfono argentinos utilizando el listado oficial de [numeración geográfoca publicada por ENACOM](https://www.enacom.gob.ar/asignaciones-a-la-fecha_p445) (Ente Nacional de Comunicaciones).
+Este _script_ valida números de teléfono argentinos utilizando el listado oficial de [numeración geográfica publicada por ENACOM](https://www.enacom.gob.ar/asignaciones-a-la-fecha_p445) (Ente Nacional de Comunicaciones).
 
 La validación, para números no específicos, se basa en comparar el código de área y el bloque numérico asignado a cada una de las operadoras. Si estas condiciones se cumplen, se considera que los números subsiguientes podrían pertenecer a un abonado.
 
