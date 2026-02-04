@@ -11,9 +11,9 @@ test('Valid', () => {
 
 
 test('Exception', () => {
-    const trhowTypeError = param => new TelefonoArgentino();
-    expect(trhowTypeError).toThrow(Error);
-    expect(trhowTypeError).toThrow("Debe ingresar un número de teléfono.");
+    const tel = new TelefonoArgentino();
+    expect(tel.isValid()).toBeFalsy();
+    expect(tel.getData()).toBeNull();
 });
 
 

@@ -14,21 +14,21 @@ Actualmente, no existe un servicio que permita verificar si un número completo 
 **Versión numeración geográfica (ENACOM)**: 13 de marzo de 2025.
 
 ## Versión actual
-2.0.2
+2.0.3
 
 ### Obtener versión
 
 ```javascript
 (new TelefonoArgentino).version;
-// '2.0.2'
+// '2.0.3'
 ```
 
-ó
+o
 
 ```javascript
 const tel = new TelefonoArgentino("+5491150176006");
 tel.version;
-// '2.0.2'
+// '2.0.3'
 ```
 
 ## Instalación
@@ -62,7 +62,7 @@ var tel = new TelefonoArgentino('5491150176006');
 
 #### getData()
 
-Retorna un array asociativo con los tipos de datos pertenecienes al número telefónico. Si el número de teléfono es incorrecto retorna: `false`
+Retorna un objeto con los datos pertenecientes al número telefónico. Si el número de teléfono es incorrecto, retorna `false`.
 
 ```javascript
 tel.getData();
@@ -93,7 +93,7 @@ tel.getData();
 
 #### input()
 
-Retorna el string ingresado para validar.
+Retorna el _string_ ingresado para validar.
 
 ```javascript
 tel.input();
@@ -101,7 +101,7 @@ tel.input();
 
 #### isValid()
 
-Tipo booleano `true` | `false`.
+Retorna un valor booleano: `true` | `false`.
 
 ```javascript
 tel.isValid();
@@ -109,7 +109,7 @@ tel.isValid();
 
 #### getType()
 Retorna el tipo de teléfono.
-Los tipos puenden ser:
+Los tipos pueden ser:
 
 - `landline` Teléfono fijo.
 - `mobile` Teléfono móvil.
@@ -122,7 +122,7 @@ tel.getType();
 
 #### invalidChars()
 
-Retorna un array con la lista de caracteres inválidos. Si no existieran caracteres inválidos el retorno es: `false`
+Retorna un array con la lista de caracteres inválidos. Si no existen caracteres inválidos, retorna `false`.
 
 ```javascript
 tel.invalidChars();
@@ -140,14 +140,15 @@ tel.invalidChars();
 
 #### htmlify()
 
-Retorna el número de teléfono con cada una de sus partes encapsuladas en una etiqueta `<span\/>``
+Retorna el número de teléfono con cada una de sus partes encapsuladas en una etiqueta `<span/>`.
 
 ##### Ejemplo
 
 ```javascript
 new TelefonoArgentino("+54 9 11 4639-1234").htmlify();
 ```
-Retorna
+
+Retorna:
 
 ```html
 <span class="country" data-country="1">+54</span> <span class="mobile" data-mobile="1">9</span> <span class="area-code" data-area_code="1">11</span> <span class="number" data-number="1">4639-1234</span>
@@ -169,11 +170,11 @@ El formato por defecto contempla todos los formatos y tipos de teléfono que val
 }
 ```
 
-El formato solo acepta las claves de retorno del _script_; ejemplo: `area_code`, `country`, etc. Para _parsear_ la clave con el valor se debe encerrar la clave entre _doble llave_, así: {{ `clave` }}.
+El formato solo acepta las claves de retorno del _script_ (por ejemplo: `area_code`, `country`, etc.). Para reemplazar la clave por su valor, se debe encerrar la clave entre _doble llave_: {{ `clave` }}.
 
-Las claves pueden ir separadas o concatenadas por una coma, de este modo: `{{ area_code,number }}`.
+Las claves pueden ir separadas o concatenadas mediante una coma: `{{ area_code,number }}`.
 
-Para agregar un elemento antes o después del valor, se puede incorporar un solo parámetro con el elemento a agregar, antes o después (before, after en inglés); del siguiente modo: 
+Para agregar un elemento antes o después del valor, se puede incorporar un parámetro con `add_before` o `add_after` del siguiente modo:
 
 ```js
 '{{ area_code|add_after:"-" }}'
@@ -195,7 +196,7 @@ También se pueden utilizar las claves por separado; sin usar la concatenación.
 // 11+=4639-2313
 ```
 
-Es importante tener en cuenta que si la clave no tiene valor, si éste es `false`; no va a imprimir nada, y esto incluye el separador.
+Es importante tener en cuenta que si la clave no tiene valor, es decir, si es `false`, no se imprime nada, incluido el separador.
 
 ##### Ejemplos
 
@@ -227,7 +228,7 @@ tel.getData().format;
 // '(11) 4639-1234'
 ```
 
-Sin código de país y código de área. Cómo el paréntesis queda vacío, se remueve. Los espacios y elementos agregados antes y después, no se imprimen.
+Sin código de país y código de área. Como el paréntesis queda vacío, se remueve. Los espacios y elementos agregados antes y después no se imprimen.
 
 ```javascript
 const tel = new TelefonoArgentino(
@@ -241,12 +242,12 @@ tel.getData().format;
 // '4639-1234'
 ```
 
-****
+---
 
 #### Formato de número
 
-El número puede estar segmentado en la cantidad de partes que se desee utilizando la combinación del caracter _numeral_ y _guión_. El formato se debe pensar de derecha a izquierda. Por ejemplo; para que un número de ocho dígitos se divida en _miles_, el formato sería este:
-`##-###-###`. El número `12345678`, qudaría de este modo: `12-345-678`.
+El número puede segmentarse en la cantidad de partes que se desee utilizando la combinación del carácter _numeral_ y _guión_. El formato se debe pensar de derecha a izquierda. Por ejemplo, para que un número de ocho dígitos se divida en _miles_, el formato sería:
+`##-###-###`. El número `12345678` quedaría de este modo: `12-345-678`.
 
 **Algunos casos**
 
@@ -264,7 +265,7 @@ tel.getData().format;
 // '+54 362 4-44-80-12'
 ```
 
-Se puede incorporar el parámetro `numberFormatSeparator`, para cambiar el separador de dígitos.
+Se puede incorporar el parámetro `numberFormatSeparator` para cambiar el separador de dígitos.
 
 ```javascript
 const tel = new TelefonoArgentino(
@@ -279,7 +280,7 @@ tel.getData().format;
 // '+54 362 4.448.012'
 ```
 
-----
+---
 
 ## Información geográfica
 
@@ -319,17 +320,18 @@ regionByAreaCode().then((data) => {
 
 
 ## Demo
-- https://codepen.io/agustinbouillet/pen/ozNVaP
-- [CODEPEN](http://codepen.io)
+
+- [CodePen](https://codepen.io/agustinbouillet/pen/ozNVaP)
 
 
 ## Referencias
-- [ENACOM](http://www.enacom.gob.ar), Ente Nacional de Comunicaciones
-- https://www.enacom.gob.ar/numeracion_p136, ENACOM, Numeración y señalización.
-- https://es.wikipedia.org/wiki/Números_telefónicos_en_Argentina, Wikipedia, Números telefónicos en Argentina, 2016
+
+- [ENACOM](https://www.enacom.gob.ar) — Ente Nacional de Comunicaciones.
+- [Numeración y señalización](https://www.enacom.gob.ar/numeracion_p136) — ENACOM.
+- [Números telefónicos en Argentina](https://es.wikipedia.org/wiki/Números_telefónicos_en_Argentina) — Wikipedia.
 
 
-----
+---
 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C5TSLQQEEE5PQ)
